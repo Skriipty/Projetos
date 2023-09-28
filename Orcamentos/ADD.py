@@ -2,25 +2,9 @@ class AdicionarCelular:
     def __init__(self, nome_cliente, modelo_celular, senha):
         self.nome_cliente = nome_cliente
         self.modelo_celular = modelo_celular
+        self.senha = senha
     
-    def adiciona_problemas(self):
-        problemas = 0
-        prob_adicionais = []
-        while(problemas != 1):
-    
-            tem = int(input('(1)Sim (2)Não\n'
-                'Problemas Adicionais?\n'))
-
-            if tem == 1:
-                
-                select_prob()
-
-                prob_adicionais.append(problema)
-    
-            else:
-                problemas += 1
-
-def select_prob(self) -> int:
+    def select_prob() -> int:
         problema = int(input('\n\nQual o problema do dispositivo?\n\n'
                 '(01)Dispositivo Apagado (02)Bateria   (03)Tela\n' 
                 '(04)Camera Trazeira     (05)Placa     (06)Áudio\n' 
@@ -31,3 +15,21 @@ def select_prob(self) -> int:
                 'Escolha uma opção: '))
         
         return problema
+    
+    def adiciona_problemas(self):
+        problemas = 0
+        prob_adicionais = []
+        while(problemas != 1):
+    
+            tem = int(input('(1)Sim (2)Não\n'
+                'Problemas Adicionais?\n'))
+
+            if tem == 1:
+
+                prob_adicionais.append(AdicionarCelular.select_prob())
+    
+            else:
+                problemas += 1
+                print(prob_adicionais)
+
+
