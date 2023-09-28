@@ -1,17 +1,20 @@
-class Tratamento:
-    def __init__(self, nome_cliente, modelo_celular,
-                  senha_do_celular, problemas_adicionais) -> None:
-           self.nome_cliente = nome_cliente
-           self.modelo_celular = modelo_celular
-           self.senha_do_celular = senha_do_celular
-           self.problemas_adicionais = problemas_adicionais
+from temp import cliente
 
-    def cliente(self, dado) -> str:
-        if dado == 0: ((f"{self.nome_cliente}"))
-        elif dado == 1: (f"{self.modelo_celular}")    
-        elif dado == 2: (f"{self.senha_do_celular}")\
+class Tratamento:
+    def __init__(self) -> None:
+           self.nome_cliente = cliente[0]
+           self.modelo_celular = cliente[1]
+           self.senha_do_celular = cliente[2]
+           self.problemas_adicionais = cliente[3]
+           self.numero = 0
+         
+    def dados_cliente(numero):
+        if numero == 0:
+             return cliente[0]
+        elif numero == 1:
+             return cliente[1]
+        elif numero == 2: 
+             return cliente[2]
         
-        return dado
-        
-    def problemas(self) -> list:
-         pass
+a = Tratamento
+a.dados_cliente(1)
